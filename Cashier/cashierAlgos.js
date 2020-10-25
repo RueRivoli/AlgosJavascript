@@ -14,16 +14,11 @@ function greedyChange(number, coins) {
     let quot_biggest_coin = Math.trunc(number / biggest_coin);
     let min_sum = -1;
     let x_min, y_min, z_min; 
-    // console.log(quot_biggest_coin);
     while (quot_biggest_coin >= 0) {
-        // console.log( 'quot_biggest_coin = ' + quot_biggest_coin);
         let rest_biggest_coin = number - quot_biggest_coin * biggest_coin;
-        // console.log( 'rest_biggest_coin = ' + rest_biggest_coin);
         let quot_middle_coin = Math.trunc(rest_biggest_coin / middle_coin);
         while (quot_middle_coin >= 0) {
-            // console.log( 'quot_middle_coin = ' + quot_middle_coin);
             let rest_middle_coin = rest_biggest_coin - quot_middle_coin * middle_coin;
-            // console.log( 'rest_middle_coin = ' + rest_middle_coin);
             let quot_smallest_coin = Math.trunc(rest_middle_coin / smallest_coin);
             let rest_smallest_coin = rest_middle_coin - quot_smallest_coin * smallest_coin;
             if (rest_smallest_coin === 0) {
@@ -33,14 +28,10 @@ function greedyChange(number, coins) {
                     y_min = quot_middle_coin;
                     x_min = quot_biggest_coin;
                     min_sum = sum;
-                    // console.log('SUM === ' + sum);
-                    // console.log('(smallest_coin): ' + x_min + ' (middle_coin): ' + y_min + ' (biggest_coin): ' + z_min );
                   }
             }
             quot_middle_coin--;
-            // console.log( '----------------- /middle_coin');
         }
-        // console.log( '----------------- /biggest_coin');
         quot_biggest_coin--;
     }
     if (min_sum !== -1) return {
