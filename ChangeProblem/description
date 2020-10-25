@@ -1,0 +1,16 @@
+The cashier
+
+A cashier has an infinity of bills of 2, 5 and 10 euros
+
+He has to give an amount of money with the minimum of bills possible.
+If he cannot give the exact number of euros, he give coins and not bills.
+
+Write a program that gives the exact number of bills of 2, 5 and 10 euros to minimise the number of bills used to give the money back to the customer.
+
+For example:
+
+12 euros: 1 bill of 10 and 1 bill of 2
+
+f (12) ==> { two: 1, five: 0, ten: 1 }
+f (15) ==> { two: 0, five: 1, ten: 1 }
+f (21) ==> { two: 3, five: 1, ten: 1 }
